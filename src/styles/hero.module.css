@@ -1,0 +1,22 @@
+.hero {
+  padding: 64px 0 32px;
+}
+.hero-content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.hero-text h1 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  margin: 0 0 12px;
+}
+.subtitle {
+  opacity: 0.8;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.avatar-img {
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.15);
+}

@@ -1,0 +1,47 @@
+.project-item {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 14px;
+}
+.project-info h3 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+}
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0;
+}
+.tech-stack span {
+  background: rgba(255,255,255,0.08);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.btn {
+  background: #1a1f22;
+  color: #e6eef2;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: background .2s;
+}
+.btn:hover {
+  background: #232a2e;
+}
+.btn.primary {
+  background: var(--accent);
+  color: #021014;
+}
+.btn.primary:hover {
+  filter: brightness(1.1);
+}

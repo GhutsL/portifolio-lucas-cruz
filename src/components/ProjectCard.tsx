@@ -33,7 +33,6 @@ const techIcons: Record<string, JSX.Element> = {
   Firebase: (
     <svg viewBox="0 0 32 32" width="16" height="16" fill="currentColor">
       <path d="M6 26 8.2 6.9c.2-1.3 1.7-1.7 2.4-.6l4.1 6.7 2.2-8.2c.3-1 1.5-1.1 2-.2l6.9 12.5L20.3 26H6Z" />
-      <path d="M6 26h14.3l5.5-8.9-2.7-4.8L6 26Z" fill="#FFC400" />
     </svg>
   ),
   MongoDB: (

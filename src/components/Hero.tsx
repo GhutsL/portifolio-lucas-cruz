@@ -5,11 +5,11 @@ export function Hero() {
     <section className="hero-full">
       <div className="hero-inner">
         <div className="hero-text">
-          <h1> Portifólio do <span className="name animate"> Lucas Cruz </span></h1>
+          <h1><span className="name animate"> Lucas Cruz </span></h1>
           <p className="subtitle">
             Desenvolvedor Fullstack<br />
-            Criador de Sistemas<br />
-            Apaixonado por Tecnologia
+            Desenvolvedor de app Mobile<br />
+            
           </p>
         </div>
         <div className="avatar-glow">

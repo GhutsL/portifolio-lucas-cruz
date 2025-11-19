@@ -14,7 +14,7 @@ export function ScrollNav() {
   return (
     <header className={`site-header ${show ? 'show' : ''}`} aria-label="Barra de navegação">
       <nav className="nav-inner" aria-label="Navegação principal">
-        <a href="/" className="brand" aria-label="Início">LM</a>
+        <a href="/" className="brand" aria-label="Início">Lucas Cruz</a>
         <ul className="nav-list">
           <li><a href="#projetos-title">Projetos</a></li>
           <li><a href="#sobre-title">Sobre</a></li>

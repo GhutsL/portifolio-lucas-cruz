@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Poppins } from 'next/font/google';
 import './globals.css';
 import { ScrollNav } from '@/components/ScrollNav';
 import { Footer } from '@/components/Footer';
+import FloatingLines from '@/components/FloatingLines';
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'], display: 'swap' });
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'], display: 'swap' });
@@ -46,6 +47,29 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="pt-BR">
       <body className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}>
+        <div style={{ 
+          position: 'fixed', 
+          top: 0, 
+          left: 0, 
+          width: '100%', 
+          height: '100%', 
+          zIndex: -1,
+          pointerEvents: 'none'
+        }}>
+          <FloatingLines 
+            linesGradient={undefined}
+            enabledWaves={['top', 'middle', 'bottom']}
+            lineCount={[7, 7, 7]}
+            lineDistance={[8, 6, 4]}
+            topWavePosition={undefined}
+            middleWavePosition={undefined}
+            bottomWavePosition={{ x: 2.0, y: -0.7, rotate: -1 }}
+            bendRadius={5.0}
+            bendStrength={-0.5}
+            interactive={true}
+            parallax={true}
+          />
+        </div>
         <a href="#conteudo-principal" className="skip-link">Pular para conteúdo</a>
         <ScrollNav />
         <main id="conteudo-principal" tabIndex={-1}>

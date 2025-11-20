@@ -32,13 +32,22 @@ const EmailLink = () => {
       className="email-link-animated"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+      }}
     >
-      <span className={`email-icon ${isHovered ? 'hidden' : 'visible'}`}>
+      <span style={{ 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        minWidth: '44px',
+        height: '44px'
+      }}>
         <EmailIcon />
       </span>
-      <span className={`email-text ${isHovered ? 'visible' : 'hidden'}`}>
-        {emailAddress}
-      </span>
+      <span className="email-text">{emailAddress}</span>
     </a>
   );
 };

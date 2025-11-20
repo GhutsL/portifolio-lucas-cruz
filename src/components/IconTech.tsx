@@ -1,12 +1,18 @@
 import React from 'react';
 
-const icons: Record<string, JSX.Element> = {
+const icons: Record<string, React.ReactElement> = {
   React: (
     <svg viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentColor" strokeWidth={2}>
       <circle cx="16" cy="16" r="3" />
       <ellipse cx="16" cy="16" rx="14" ry="5" transform="rotate(60 16 16)" />
       <ellipse cx="16" cy="16" rx="14" ry="5" transform="rotate(-60 16 16)" />
       <ellipse cx="16" cy="16" rx="14" ry="5" />
+    </svg>
+  ),
+  JavaScript: (
+    <svg viewBox="0 0 32 32" width="16" height="16" fill="currentColor">
+      <rect width="32" height="32" rx="4" fill="#F7DF1E" />
+      <path fill="#000" d="M18.5 19.5c0 2.5 1.5 3.7 3.6 3.7 1.5 0 2.5-.8 3-1.8l-1.5-1c-.3.6-.7.9-1.5.9-.8 0-1.2-.5-1.2-1.8v-7h-2.4v7Zm-7.5 0c0 2.5 1.5 3.7 3.5 3.7 1.5 0 2.4-.8 2.9-1.8l-1.5-1c-.3.6-.6.9-1.4.9-.9 0-1.1-.6-1.1-1.8v-7h-2.4v7Z" />
     </svg>
   ),
   TypeScript: (
@@ -58,6 +64,7 @@ function normalize(n: string) {
   return n.trim()
     .replace(/React\s*Native/i, 'React Native')
     .replace(/^Typescript$/i, 'TypeScript')
+    .replace(/^Javascript$/i, 'JavaScript')
     .replace(/^Node\.?js$/i, 'Node.js')
     .replace(/^Next\.?js$/i, 'Next.js')
     .replace(/^Socket\.?io$/i, 'SocketIO');

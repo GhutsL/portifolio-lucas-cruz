@@ -315,6 +315,67 @@ a:hover { text-decoration: underline; }
   color: var(--accent);
 }
 
+/* Email link com expansão animada */
+.email-link-animated {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 14px;
+  background: #121416;
+  border: 1px solid rgba(255,255,255,0.10);
+  color: #e6eef2;
+  transition: width .4s cubic-bezier(0.4, 0, 0.2, 1), 
+              background .25s, 
+              box-shadow .25s, 
+              color .25s;
+  text-decoration: none;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0;
+  position: relative;
+}
+
+.email-link-animated svg {
+  min-width: 22px;
+  min-height: 22px;
+  width: 22px;
+  height: 22px;
+  margin: 0 11px;
+  flex-shrink: 0;
+  stroke: #e6eef2 !important;
+  fill: none !important;
+}
+
+.email-link-animated:hover svg {
+  stroke: var(--accent) !important;
+}
+
+.email-link-animated .email-text {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity .3s cubic-bezier(0.4, 0, 0.2, 1) .1s, 
+              transform .3s cubic-bezier(0.4, 0, 0.2, 1) .1s;
+  padding-right: 16px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.email-link-animated:hover {
+  width: 260px;
+  background: #1b1f22;
+  box-shadow: 0 0 0 2px rgba(var(--accent-rgb),0.55), 0 0 26px -4px rgba(var(--accent-rgb),0.55);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.email-link-animated:hover .email-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 /* Skip link */
 .skip-link {
   position: absolute;

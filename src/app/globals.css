@@ -605,13 +605,14 @@ main > section + section { margin-top: 60px; }
 
 /* Optional: animação suave nos cards ao rolar */
 .project-item {
-  opacity: 0;
-  transform: translateY(40px);
+  opacity: 1;
+  transform: translateY(0);
   animation: rise .7s forwards;
 }
 .project-item:nth-of-type(2) { animation-delay: .15s; }
 .project-item:nth-of-type(3) { animation-delay: .30s; }
 @keyframes rise {
+  from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
 }
 

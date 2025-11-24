@@ -1,6 +1,7 @@
 import { Hero } from '@/components/Hero';
 import { projects } from '@/data/projects';
 import { ProjectCard } from '@/components/ProjectCard';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       </section>
 
       <div className="container">
+        <SpeedInsights />
         <section aria-labelledby="projetos-title" className="projects-wrapper">
           <h2 id="projetos-title" className="section-title">Projetos</h2>
           <div className="projects-stack">

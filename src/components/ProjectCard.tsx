@@ -2,6 +2,7 @@ import { Project } from '@/data/projects';
 import { ProjectCarousel } from './ProjectCarousel';
 import { IconTech } from './IconTech';
 import React from 'react';
+import Image from 'next/image';
 
 const techIcons: Record<string, React.ReactElement> = {
   React: (
@@ -81,9 +82,21 @@ export function ProjectCard({ project }: { project: any }) {
         .filter(Boolean)
     : [];
 
+  const projectImages = project.id === 'CERNE' ? [
+    '/Cerne1.jpg',
+    '/Cerne2.jpg',
+    '/Cerne3.jpg',
+    '/Cerne4.jpg',
+  ] : project.id === 'Simpliza TCC' ? [
+    '/Simpliza1.jpg',
+    '/Simpliza2.jpg',
+    '/Simpliza3.jpg',
+    '/Simplzia4.jpg',
+  ] : [];
+
   return (
     <article className="project-item high-contrast" aria-labelledby={`proj-${project.id}`}>
-      <ProjectCarousel gradients={project.gradients} label={project.title} />
+      <ProjectCarousel images={projectImages} label={project.title} />
       <div className="project-info">
         <h3 id={`proj-${project.id}`}>{project.title}</h3>
         <p>{project.description}</p>

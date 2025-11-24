@@ -188,12 +188,14 @@ a:hover { text-decoration: underline; }
   align-items: center;
   gap: 6px;
   transition: background .25s, box-shadow .25s;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.18), 0 10px 28px -12px rgba(0,0,0,.7);
 }
 .btn:hover { background: #1c1f22; }
 .btn.primary {
   background: var(--accent);
   color: #021014;
   border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(0,200,255,0.6), 0 10px 36px -14px rgba(0,200,255,0.55);
 }
 .btn.primary:hover { filter: brightness(1.08); }
 .btn.glow { box-shadow: 0 0 14px rgba(var(--accent-rgb),0.55); }
@@ -204,8 +206,10 @@ a:hover { text-decoration: underline; }
   font-size: .8rem;
   font-family: var(--font-geist-mono), monospace;
   line-height: 1.4;
-  overflow: auto;
-  white-space: pre;
+  overflow-x: hidden;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 /* Carousel */
@@ -213,16 +217,20 @@ a:hover { text-decoration: underline; }
 .carousel-main {
   position: relative;
   width: 100%;
-  height: 360px;
+  max-width: 800px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
   border-radius: 28px;
   overflow: hidden;
-  background: #0f1113;
-  border: 1px solid var(--glass-border);
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 .carousel-slide-main {
-  width: 100%; height: 100%;
-  background-size: cover;
-  transition: background .5s ease;
+  width: 100%; 
+  height: 100%;
+  object-fit: contain;
+  background: transparent;
 }
 .carousel-btn {
   position: absolute;
@@ -245,16 +253,12 @@ a:hover { text-decoration: underline; }
 
 .carousel-thumbnails { display: flex; gap: 10px; flex-wrap: wrap; }
 .thumbnail {
-  width: 72px;
-  height: 72px;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,0.12);
-  cursor: pointer;
-  transition: box-shadow .25s, transform .25s;
+  box-shadow: none;
+  border: none;
 }
 .thumbnail:hover { transform: translateY(-3px); }
 .thumbnail[aria-current="true"] {
-  box-shadow: 0 0 0 2px var(--accent), 0 0 12px rgba(var(--accent-rgb),0.55);
+  box-shadow: 0 0 0 2px rgba(0,200,255,0.9), 0 0 24px -4px rgba(0,200,255,0.75);
 }
 
 /* Footer */
@@ -543,10 +547,6 @@ main > section + section { margin-top: 60px; }
 }
 
 /* Aumentar e arredondar carrossel dentro do card */
-.carousel-main {
-  height: 380px;
-  border-radius: 34px;
-}
 .thumbnail {
   width: 78px;
   height: 78px;
@@ -593,9 +593,23 @@ main > section + section { margin-top: 60px; }
 /* Responsivo */
 @media (max-width: 900px) {
   .project-item { padding: 50px; gap: 38px; }
-  .carousel-main { height: 300px; }
+  .carousel-main { 
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+  }
   .project-info h3 { font-size: 1.9rem; }
   .avatar img { width: 140px; height: 140px; }
+  .sobre-top { padding: 30px 18px 0; }
+}
+
+@media (max-width: 600px) {
+  .carousel-main {
+    aspect-ratio: 4 / 3;
+  }
+  .thumbnail {
+    width: 60px;
+    height: 60px;
+  }
 }
 
 /* Compensar navbar fixa (adiciona espaço no topo do main se quiser) */
@@ -845,22 +859,14 @@ main > section + section { margin-top: 60px; }
 }
 
 .thumbnail {
-  border: 1px solid rgba(255,255,255,0.20);
-  box-shadow: 0 0 0 1px rgba(0,200,255,0.25), 0 10px 30px -12px rgba(0,0,0,.6);
+  box-shadow: none;
+  border: none;
 }
 
 .thumbnail[aria-current="true"] {
   box-shadow: 0 0 0 2px rgba(0,200,255,0.9), 0 0 24px -4px rgba(0,200,255,0.75);
 }
 
-.carousel-main {
-  border: 1px solid rgba(255,255,255,0.20);
-  box-shadow: 0 0 0 1px rgba(0,200,255,0.18), 0 24px 60px -20px rgba(0,0,0,.7);
-}
-
-.btn {
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.18), 0 10px 28px -12px rgba(0,0,0,.7);
-}
 .btn.primary {
   box-shadow: 0 0 0 1px rgba(0,200,255,0.6), 0 10px 36px -14px rgba(0,200,255,0.55);
 }

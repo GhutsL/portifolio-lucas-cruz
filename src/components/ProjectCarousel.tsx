@@ -3,14 +3,14 @@
 import { useState, useCallback, useEffect } from 'react';
 
 interface Props {
-  gradients: string[];
+  images: string[];
   label: string;
 }
 
-export function ProjectCarousel({ gradients, label }: Props) {
+export function ProjectCarousel({ images, label }: Props) {
   const [active, setActive] = useState(0);
-  const next = useCallback(() => setActive(p => (p + 1) % gradients.length), [gradients.length]);
-  const prev = useCallback(() => setActive(p => (p - 1 + gradients.length) % gradients.length), [gradients.length]);
+  const next = useCallback(() => setActive(p => (p + 1) % images.length), [images.length]);
+  const prev = useCallback(() => setActive(p => (p - 1 + images.length) % images.length), [images.length]);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -24,11 +24,11 @@ export function ProjectCarousel({ gradients, label }: Props) {
   return (
     <div className="project-carousel" aria-label={`Slides do projeto ${label}`}>
       <div className="carousel-main">
-        <div
+        <img
           className="carousel-slide-main"
-          style={{ background: gradients[active] }}
+          src={images[active]}
+          alt={`Slide ${active + 1} de ${images.length}`}
           role="img"
-          aria-label={`Slide ${active + 1} de ${gradients.length}`}
         />
         <button type="button" className="carousel-btn carousel-btn-prev" onClick={prev} aria-label="Slide anterior">
           ‹
@@ -38,13 +38,13 @@ export function ProjectCarousel({ gradients, label }: Props) {
         </button>
       </div>
       <div className="carousel-thumbnails" role="list" aria-label="Miniaturas de slides">
-        {gradients.map((g, i) => (
+        {images.map((img, i) => (
           <button
-            key={g + i}
+            key={img + i}
             type="button"
             className={`thumbnail ${i === active ? 'active' : ''}`}
             onClick={() => setActive(i)}
-            style={{ background: g }}
+            style={{ backgroundImage: `url(${img})` }}
             aria-label={`Ir para slide ${i + 1}`}
             aria-current={i === active}
           />

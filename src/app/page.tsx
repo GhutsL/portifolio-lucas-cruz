@@ -12,9 +12,9 @@ export default function Home() {
         <h2 id="sobre-title" className="section-title">Sobre mim</h2>
         <pre className="code-block high-contrast" aria-label="Informações">
 {`{
-  "nome": "Lucas Matias",
-  "stack": ["Node.js", "React", "MongoDB", "Next.js"],
-  "foco": "Soluções inteligentes para empresas"
+  "nome": "Lucas Matias Cruz",
+  "stack": ["React", "MongoDB", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS", "React Native", "Python", "PHP"],
+  "Desenvolvedor full-stack e mobile em aprendizado, mas quero focar front-end, por enquanto quero aprimorar meu conhecimento full stack focado em REACT, PHP, Javascript "] ,
 }`}
         </pre>
       </section>

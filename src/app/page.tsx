@@ -14,7 +14,7 @@ export default function Home() {
 {`{
   "nome": "Lucas Matias Cruz",
   "stack": ["React", "MongoDB", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS", "React Native", "Python", "PHP"],
-  "Desenvolvedor full-stack e mobile em aprendizado, mas quero focar front-end, por enquanto quero aprimorar meu conhecimento full stack focado em REACT, PHP, Javascript "] ,
+  "Desenvolvedor full-stack e mobile em aprendizado, mas quero focar front-end, por enquanto quero aprimorar meu conhecimento full stack focado em REACT, PHP, Javascript "],
 }`}
         </pre>
       </section>

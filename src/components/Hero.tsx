@@ -16,7 +16,7 @@ export function Hero() {
         </div>
         <div className="avatar-glow">
           <Image
-            src="/avatar.jpg"
+            src="/Avatar.jpg"
             width={190}
             height={190}
             alt="Foto de perfil"

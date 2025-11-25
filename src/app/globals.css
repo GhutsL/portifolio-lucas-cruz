@@ -131,7 +131,7 @@ a:hover { text-decoration: underline; }
 .code-block {
   background: var(--panel-gradient);
   border: 1px solid var(--glass-border);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(30px);
   border-radius: 16px;
   box-shadow: var(--shadow-glow);
   position: relative;

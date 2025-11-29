@@ -1193,6 +1193,18 @@ main > section + section { margin-top: 60px; }
   left: 100%;
 }
 
+/* Animação para mensagem de email copiado */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
 
 
 

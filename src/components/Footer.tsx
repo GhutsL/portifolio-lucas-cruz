@@ -93,7 +93,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="site-footer">
+    <footer className="site-footer" id="contato-footer">
       <div className="footer-inner">
         <nav className="social" aria-label={FOOTER_TEXT.socialLabel}>
           <SocialLink

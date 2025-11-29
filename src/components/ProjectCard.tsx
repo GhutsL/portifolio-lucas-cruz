@@ -103,16 +103,16 @@ export function ProjectCard({ project }: { project: any }) {
         {techList.length > 0 && (
           <div className="project-tech-buttons">
             {techList.map(t => (
-              <button key={t} type="button" className="btn tech-btn" aria-label={t}>
+              <span key={t} className="tech-badge" aria-label={t}>
                 <span className="tech-icon"><IconTech name={t} /></span>
                 <span className="tech-text">{t}</span>
-              </button>
+              </span>
             ))}
           </div>
         )}
         <div className="actions">
           {project.repoUrl && (
-            <a className="btn" href={project.repoUrl} target="_blank" rel="noopener noreferrer">
+            <a className="btn btn-repo-animated" href={project.repoUrl} target="_blank" rel="noopener noreferrer">
               Repositório
             </a>
           )}

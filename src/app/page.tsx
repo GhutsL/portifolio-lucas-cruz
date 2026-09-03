@@ -26,8 +26,8 @@ export default function Home() {
         <h2 id="sobre-title" className="section-title" style={{ fontSize: 'clamp(2.4rem, 5vw, 3.2rem)', lineHeight: '1.1', letterSpacing: '0.6px', marginBottom: '28px' }}>Sobre mim</h2>
         <pre className="code-block high-contrast" aria-label="Informações">
 {`{
-  "nome": "Lucas Matias Cruz",
-  "Desenvolvedor full-stack e mobile em aprendizado, mas quero focar front-end, por enquanto quero aprimorar meu conhecimento full stack focado em REACT, PHP, Javascript "],
+  "Nome: Lucas Matias Cruz",
+  "Profissional formado no curso Técnico em Desenvolvimento de Sistemas e atualmente graduando em Ciência da Computação pela UNINOVE. Possuo conhecimentos em desenvolvimento de software, suporte técnico e manutenção de sistemas, com experiência prática em JavaScript, TypeScript, Python, PHP, React Native, Next.js, MySQL e MongoDB, além de Git e GitHub. Tenho perfil proativo e autodidata, facilidade para aprender novas tecnologias e experiência com atendimento ao usuário, manutenção preventiva e corretiva e resolução de problemas técnicos."
 }`}
         </pre>
 

@@ -11,7 +11,7 @@ export function Hero() {
           <p className="subtitle">
             Desenvolvedor Fullstack<br />
             Desenvolvedor de app Mobile<br />
-            
+            Estudante de Ciência da Computação<br />
           </p>
         </div>
         <div className="avatar-glow">

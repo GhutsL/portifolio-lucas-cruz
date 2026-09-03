@@ -23,26 +23,49 @@ const SocialLink = ({ href, ariaLabel, children }: SocialLinkProps) => (
 
 const EmailLink = () => {
   const [copied, setCopied] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
+  const [copyError, setCopyError] = useState(false);
   const emailAddress = SOCIAL_LINKS.email.url.replace('mailto:', '');
 
   const handleCopyEmail = async (e: React.MouseEvent) => {
     e.preventDefault();
+    setCopyError(false);
+
     try {
-      await navigator.clipboard.writeText(emailAddress);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error('Erro ao copiar e-mail:', err);
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(emailAddress);
+      } else {
+        throw new Error('Clipboard API indisponível');
+      }
+    } catch {
+      try {
+        const textArea = document.createElement('textarea');
+        textArea.value = emailAddress;
+        textArea.setAttribute('readonly', '');
+        textArea.style.position = 'fixed';
+        textArea.style.opacity = '0';
+        document.body.appendChild(textArea);
+        textArea.select();
+        const copiedWithFallback = document.execCommand('copy');
+        textArea.remove();
+
+        if (!copiedWithFallback) {
+          throw new Error('Não foi possível copiar o e-mail');
+        }
+      } catch {
+        setCopyError(true);
+        setTimeout(() => setCopyError(false), 2500);
+        return;
+      }
     }
+
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
     <div style={{ position: 'relative', display: 'inline-flex' }}>
       <button
         onClick={handleCopyEmail}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
         aria-label="Copiar e-mail para área de transferência"
         className="email-link-animated"
       >
@@ -58,7 +81,7 @@ const EmailLink = () => {
         <span className="email-text">{emailAddress}</span>
       </button>
       
-      {copied && (
+      {(copied || copyError) && (
         <div
           style={{
             position: 'absolute',
@@ -77,7 +100,7 @@ const EmailLink = () => {
             zIndex: 1000,
           }}
         >
-          E-mail copiado! ✓
+          {copied ? 'E-mail copiado! ✓' : 'Não foi possível copiar'}
         </div>
       )}
     </div>

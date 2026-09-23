@@ -10,7 +10,6 @@ import {
   SiPhp, 
   SiPython,
   SiMongodb,
-  SiFirebase,
   SiMysql,
   SiReact,
   SiNextdotjs,
@@ -68,10 +67,6 @@ export default function Home() {
               <div className="skill-item">
                 <SiMongodb className="skill-icon" />
                 <span>MongoDB</span>
-              </div>
-              <div className="skill-item">
-                <SiFirebase className="skill-icon" />
-                <span>Firebase</span>
               </div>
               <div className="skill-item">
                 <SiMysql className="skill-icon" />
